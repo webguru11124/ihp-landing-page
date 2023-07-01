@@ -32,7 +32,7 @@ renderForm paragraphCta landingPages = formFor paragraphCta [hsx|
             visibleForm paragraphCta landingPages =
                 [hsx|
                     {(textField #title) {required = True}}
-                    {(textareaField #body) {required = True}}
+                    {wysiwygField "body" (get #body paragraphCta)}
                      {(selectField #refLandingPageId landingPages) {required = True, fieldLabel = "Landing page", helpText = "Select the landing page you want to link to."}}
                     {submitButton}
                 |]
